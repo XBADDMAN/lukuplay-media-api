@@ -3,7 +3,6 @@ require('dotenv').config();
 import Fastify from 'fastify';
 import FastifyCors from '@fastify/cors';
 import FastifyRateLimit from '@fastify/rate-limit';
-import comics from './routes/comics';
 import lightnovels from './routes/light-novels';
 import movies from './routes/movies';
 import meta from './routes/meta';
@@ -30,7 +29,6 @@ import meta from './routes/meta';
     },
   });
 
-  await fastify.register(comics, { prefix: '/comics' });
   await fastify.register(lightnovels, { prefix: '/light-novels' });
   await fastify.register(movies, { prefix: '/movies' });
   await fastify.register(meta, { prefix: '/meta' });
